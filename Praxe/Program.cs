@@ -1,4 +1,6 @@
-﻿namespace Praxe
+﻿using System.Diagnostics;
+
+namespace Praxe
 {
     internal class Program
     {
@@ -8,6 +10,7 @@
             //cau
             Console.WriteLine("Karel");
             //comment
+            Console.Write("je");
             Console.ReadKey();
             //comment2
             //comment3
