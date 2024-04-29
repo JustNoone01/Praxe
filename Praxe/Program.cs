@@ -7,7 +7,7 @@
             Console.Write("Zadej n: ");
             int n = Convert.ToInt32(Console.ReadLine());
 
-            int number = Soucet(205);
+            int number = Soucet(n);
             Console.WriteLine(number);
             Console.ReadLine();
         }
