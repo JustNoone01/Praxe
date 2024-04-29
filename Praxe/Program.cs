@@ -22,11 +22,29 @@
 
         static void UI()
         {
-            Console.Write("Zadej n: ");
-            int n = Convert.ToInt32(Console.ReadLine());
+            int n = getInput();
+            int result = Soucet(n);
+            Console.WriteLine($"Vysledek: {result}");
+        }
 
-            int number = Soucet(n);
-            Console.WriteLine(number);
+        static int getInput()
+        {
+            int n;
+
+            while (true)
+            {
+                Console.Write("Zadej n: ");
+                bool ok = Int32.TryParse(Console.ReadLine(), out n);
+                Console.Write("\n");
+
+                if (ok)
+                {
+                    break;
+                }
+                Console.WriteLine("Chyba ve vstupu!");
+            }
+
+            return n;
         }
     }
 }
