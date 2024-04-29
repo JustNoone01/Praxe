@@ -19,8 +19,6 @@ namespace Praxe
                  result +=i;
             }
             Console.WriteLine($"vaše číslo je: {result}");
-
-
             return result;  
         }
     }
