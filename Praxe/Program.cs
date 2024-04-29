@@ -4,11 +4,9 @@
     {
         static void Main(string[] args)
         {
-            Console.Write("Zadej n: ");
-            int n = Convert.ToInt32(Console.ReadLine());
 
-            int number = Soucet(n);
-            Console.WriteLine(number);
+            UI();
+
             Console.ReadLine();
         }
 
@@ -20,6 +18,15 @@
                 result += i;
             }
             return result;
+        }
+
+        static void UI()
+        {
+            Console.Write("Zadej n: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+
+            int number = Soucet(n);
+            Console.WriteLine(number);
         }
     }
 }
