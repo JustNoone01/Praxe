@@ -30,6 +30,9 @@ namespace Praxe
                 {
                     Console.Write($"{cislo} ");
                     cislo = cislo * (i - j) / (j + 1);
+                    // další číslo = předchozí číslo * (číslo řádku - číslo sloupce) / (číslo sloupce + 1)
+                    // Sloupce a Řádky jdou od 0
+                    // Nejde dělit nulou
                 }
                 Console.WriteLine();
             }
