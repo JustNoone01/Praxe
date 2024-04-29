@@ -7,6 +7,7 @@
             Console.WriteLine("Hello, World!");
             //cau
             Console.WriteLine("Karel");
+            //comment
             Console.ReadKey();
         }
     }
