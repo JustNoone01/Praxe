@@ -27,10 +27,13 @@ namespace Praxe
                 Console.WriteLine("Neplatný vstup");
                 Uzivatel();
             }
-            int number = Soucet(cisloN);
-            Console.WriteLine($"vaše číslo je: {number}");
+            else
+            {
+                int number = Soucet(cisloN);
+                Console.WriteLine($"vaše číslo je: {number}");
 
-            Console.ReadKey(true);
+                Console.ReadKey(true);
+            }
         }
 
         
