@@ -1,17 +1,16 @@
-﻿using System.Diagnostics;
-using System.Diagnostics.Metrics;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Praxe
 {
-    internal class Program
+    internal class Kalkulacka
     {
-        static void Main(string[] args)
-        {
-            Kalkulacka K1 = new Kalkulacka();
-            K1.vypis();
-        }
-        static public int Kalkulator(int end)
+        private int start = 1;
+
+        private int vypocet(int end)
         {
             int counter = 0;
             for (int i = 1; i <= end; i++)
@@ -20,7 +19,7 @@ namespace Praxe
             }
             return counter;
         }
-        static public void vypsat()
+        public void vypis()
         {
             bool success = false;
             int end = 0;
@@ -30,7 +29,7 @@ namespace Praxe
                 success = int.TryParse(Console.ReadLine(), out end);
             }
 
-            int soucet = Kalkulator(end);
+            int soucet = vypocet(end);
             Console.WriteLine($"Součet od 1 do {end}: {soucet}");
             Console.ReadKey(true);
         }
