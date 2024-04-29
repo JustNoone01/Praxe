@@ -6,14 +6,22 @@ namespace Praxe
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
-            //cau
-            Console.WriteLine("Karel");
-            //comment
-            Console.Write("je");
-            Console.ReadKey();
-            //comment2
-            //comment3
+            Soucet();
+        }
+        static int Soucet()
+        {
+            Console.WriteLine("Zadej poslední sčítané číslo: ");
+            int cisloN =Convert.ToInt32(Console.ReadLine());
+
+            int result = 0;
+            for (int i = 0; i <= cisloN; i++)
+            {
+                 result +=i;
+            }
+            Console.WriteLine($"vaše číslo je: {result}");
+
+
+            return result;  
         }
     }
 }
