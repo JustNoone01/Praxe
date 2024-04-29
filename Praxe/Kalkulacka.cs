@@ -10,7 +10,7 @@ namespace Praxe
     {
         private int start = 1;
 
-        private int vypocet(int end)
+        private int Vypocet(int end)
         {
             int counter = 0;
             for (int i = 1; i <= end; i++)
@@ -19,7 +19,7 @@ namespace Praxe
             }
             return counter;
         }
-        public void vypis()
+        public void Vypis()
         {
             bool success = false;
             int end = 0;
@@ -29,7 +29,7 @@ namespace Praxe
                 success = int.TryParse(Console.ReadLine(), out end);
             }
 
-            int soucet = vypocet(end);
+            int soucet = Vypocet(end);
             Console.WriteLine($"Součet od 1 do {end}: {soucet}");
             Console.ReadKey(true);
         }
