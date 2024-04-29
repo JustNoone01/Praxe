@@ -10,15 +10,28 @@ namespace Praxe
     {
         private void Fibonachi(int end)
         {
-            int counter = 0;
+            int counter1 = 0;
             int counter2 = 1;
             int counter3;
             for (int cykly = 0; cykly <= end; cykly++)
             {
-                Console.WriteLine(counter + counter2);
-                counter3 = counter;
-                counter = counter2;
+                Console.WriteLine(counter1 + counter2);
+                counter3 = counter1;
+                counter1 = counter2;
                 counter2 += counter3;
+            }
+        }
+        static void PascaluvTroj(int radky)
+        {
+            for (int i = 0; i <= radky; i++)
+            {
+                int cislo = 1;
+                for (int j = 0; j <= i; j++)
+                {
+                    Console.Write($"{cislo} ");
+                    cislo = cislo * (i - j) / (j + 1);
+                }
+                Console.WriteLine();
             }
         }
         private int Vypocet(int end)
@@ -39,6 +52,8 @@ namespace Praxe
                 Console.Write("Napiš konečné číslo: ");
                 success = int.TryParse(Console.ReadLine(), out end);
             }
+            PascaluvTroj(end);
+            Console.WriteLine();
             Fibonachi(end);
             int soucet = Vypocet(end);
             Console.WriteLine($"Součet od 1 do {end}: {soucet}");
