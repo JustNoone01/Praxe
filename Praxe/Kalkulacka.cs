@@ -31,6 +31,11 @@ namespace Praxe
                     Console.Write($"{cislo} ");
                     cislo = cislo * (i - j) / (j + 1);
                     // další číslo = předchozí číslo * (číslo řádku - číslo sloupce) / (číslo sloupce + 1)
+                    //Když i = 3 nebo i = čtyři řádky
+                        // cislo = 1 * (3 - 0) / (0 + 1) ==== 3
+                        // cislo = 3 * (3 - 1) / (1 + 1) ==== 3
+                        // cislo = 3 * (3 - 2) / (2 + 1) ==== 1
+                        // výsledek:  1 3 3 1
                     // Sloupce a Řádky jdou od 0
                     // Nejde dělit nulou
                 }
