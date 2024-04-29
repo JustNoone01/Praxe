@@ -6,7 +6,7 @@
         {
 
             Kalkulator kalkulator = new Kalkulator();
-            kalkulator.UI();
+            kalkulator.UIFibonacci();
 
             Console.ReadLine();
         }

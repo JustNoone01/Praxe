@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,27 @@ namespace Praxe
 {
     internal class Kalkulator
     {
+        public int Fibonacci(int n)
+        {
+            int result = 0;
+            List<int> prevNumbers = new List<int>() { 0, 1 };
+            int counter = 0;
+
+            Console.Write($"{prevNumbers[0]} ");
+
+            while (counter < n)
+            {
+                int sum = prevNumbers[0] + prevNumbers[1];
+                result += sum;
+                prevNumbers[0] = prevNumbers[1];
+                prevNumbers[1] = sum;
+                counter++;
+                Console.Write($"{prevNumbers[1]} ");
+            }
+
+            return result;
+        }
+
         private int Soucet(int n)
         {
             int result = 0;
@@ -18,11 +40,17 @@ namespace Praxe
             return result;
         }
 
-        public void UI()
+        public void UISoucet()
         {
             int n = GetInput();
             int result = Soucet(n);
             Console.WriteLine($"Vysledek: {result}");
+        }
+
+        public void UIFibonacci()
+        {
+            int n = GetInput();
+            int result = Fibonacci(n);
         }
 
         private int GetInput()
