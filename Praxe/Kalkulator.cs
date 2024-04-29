@@ -12,20 +12,24 @@ namespace Praxe
         public int Fibonacci(int n)
         {
             int result = 0;
-            List<int> prevNumbers = new List<int>() { 0, 1 };
+            int prevNumber1 = 0;
+            int prevNumber2 = 1;
             int counter = 0;
 
-            Console.Write($"{prevNumbers[0]} ");
+            Console.Write($"{prevNumber1} ");
 
-            while (counter < n)
+            while (counter < n - 2)
             {
-                int sum = prevNumbers[0] + prevNumbers[1];
+                Console.Write($"{prevNumber2} ");
+                int sum = prevNumber1 + prevNumber2;
                 result += sum;
-                prevNumbers[0] = prevNumbers[1];
-                prevNumbers[1] = sum;
+                prevNumber1 = prevNumber2;
+                prevNumber2 = sum;
                 counter++;
-                Console.Write($"{prevNumbers[1]} ");
             }
+
+            Console.Write($"{prevNumber2} ");
+
 
             return result;
         }
