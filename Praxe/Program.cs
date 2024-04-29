@@ -6,6 +6,7 @@
         {
             Console.WriteLine("Hello, World!");
             //cau
+            Console.ReadKey();
         }
     }
 }
