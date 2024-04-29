@@ -20,9 +20,17 @@ namespace Praxe
         static void Uzivatel()
         {
             Console.WriteLine("Zadej poslední sčítané číslo: ");
-            int cisloN = Convert.ToInt32(Console.ReadLine());
+            int cisloN;
+            bool ok = Int32.TryParse(Console.ReadLine(), out cisloN);
+            if (!ok)
+            {
+                Console.WriteLine("Neplatný vstup");
+                Uzivatel();
+            }
             int number = Soucet(cisloN);
             Console.WriteLine($"vaše číslo je: {number}");
+
+            Console.ReadKey(true);
         }
 
         
