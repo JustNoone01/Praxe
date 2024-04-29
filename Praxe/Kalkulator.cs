@@ -20,12 +20,12 @@ namespace Praxe
 
         public void UI()
         {
-            int n = getInput();
+            int n = GetInput();
             int result = Soucet(n);
             Console.WriteLine($"Vysledek: {result}");
         }
 
-        private int getInput()
+        private int GetInput()
         {
             int n;
 
