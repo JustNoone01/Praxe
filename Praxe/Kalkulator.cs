@@ -33,10 +33,17 @@ namespace Praxe
             {
                 int number = Soucet(cisloN);
                 Console.WriteLine($"vaše číslo je: {number}");
-                Fibonacci(cisloN);
-               
+                Console.WriteLine();
 
-                Console.ReadKey(true);
+                Console.WriteLine("Fibonacciho posloupnost");
+                Fibonacci(cisloN);
+
+                Console.WriteLine();
+                Console.WriteLine("\nPascalův trojúhelník");
+                Console.WriteLine();
+                PascaluvTrojuhelnik(cisloN);
+
+
             }
         }
         public int Fibonacci(int cisloN)
@@ -52,6 +59,19 @@ namespace Praxe
                 b = next;
             }
             return cisloN;
-        }      
+        }
+        public void PascaluvTrojuhelnik(int cisloN)
+        {
+            for (int i = 0; i <= cisloN; i++)
+            {
+                int cislo = 1;
+                for (int j = 0; j <= i; j++)
+                {
+                    Console.Write($"{cislo} ");
+                    cislo = cislo * (i - j) / (j + 1);
+                }
+                Console.WriteLine();
+            }
+        }
     }
 }
