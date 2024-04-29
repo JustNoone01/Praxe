@@ -9,7 +9,7 @@ namespace Praxe
         static void Main(string[] args)
         {
             Kalkulacka K1 = new Kalkulacka();
-            K1.vypis();
+            K1.Vypis();
         }
     }
 }

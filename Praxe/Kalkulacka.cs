@@ -8,8 +8,6 @@ namespace Praxe
 {
     internal class Kalkulacka
     {
-        private int start = 1;
-
         private int Vypocet(int end)
         {
             int counter = 0;
