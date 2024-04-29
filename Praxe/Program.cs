@@ -6,7 +6,7 @@
         {
 
             Kalkulator kalkulator = new Kalkulator();
-            kalkulator.UIFibonacci();
+            kalkulator.PascalTriangle(7);
 
             Console.ReadLine();
         }

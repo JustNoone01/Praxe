@@ -9,6 +9,45 @@ namespace Praxe
 {
     internal class Kalkulator
     {
+        /* public void PascalTriangle(int n)
+        {
+            List<int> row = new List<int>() { 1 };
+
+            for (int i = 0; i < n; i++)
+            {
+                List<int> newRow = new List<int>();
+
+                foreach (int j in row)
+                {
+                    Console.Write(j);
+                }
+
+                for (int j = 0; j < row.Count - 1; j++)
+                {
+                    if (j == 0 || j == row.Count - 1)
+                    {
+                        newRow.Add(row[j] + 0);
+                    }
+                    newRow.Add(row[j] + row[j + 1]);
+                }
+                row = newRow;
+            }
+        } */
+
+        public void PascalTriangle(int rows)
+        {
+            for (int i = 0; i <= rows; i++)
+            {
+                int n = 1;
+                for (int j = 0; j <= i; j++)
+                {
+                    Console.Write($"{n} ");
+                    n = n * (i - j) / (j + 1);
+                }
+                Console.WriteLine();
+            }
+        }
+
         public int Fibonacci(int n)
         {
             int result = 0;
