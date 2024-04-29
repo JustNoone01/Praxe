@@ -9,6 +9,7 @@
             Console.WriteLine("Karel");
             //comment
             Console.ReadKey();
+            //comment2
         }
     }
 }
