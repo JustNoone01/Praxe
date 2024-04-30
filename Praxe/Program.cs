@@ -105,7 +105,7 @@ namespace Praxe
                     Pole[radek, sloupec] = "X";
                 }
 
-                if (radek +1 > 4)
+                if (radek +1 > Pocetradek-1)
                 {
 
                 } // Dole
@@ -138,7 +138,7 @@ namespace Praxe
 
                 }
 
-                if (sloupec + 1 > 4)
+                if (sloupec + 1 > Pocetsloupcu-1)
                 {
 
                 } // Vpravo
