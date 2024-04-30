@@ -74,8 +74,8 @@ namespace Praxe
                     }
                     Console.WriteLine();
                 }
+                Console.ReadKey(true);
                 Console.WriteLine();
-
 
                 Console.Write("Zadej řádek bodu který chceš změnit: ");
                 int radek;
