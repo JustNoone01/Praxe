@@ -7,13 +7,29 @@ namespace Praxe
     {
         static void Main(string[] args)
         {
-            string[,] Pole = new string[5, 5];
+            Console.Write("Zadej počet řádků: ");
+            int Pocetradek;
+            while (!int.TryParse(Console.ReadLine(), out Pocetradek))
+            {
+                Console.WriteLine("Zadaná volba neodpovádí formátu.");
+                Console.Write("Zadej počet řádků: ");
+            }
+
+            int Pocetsloupcu;
+            Console.Write("Zadej počet sloupců: ");
+            while (!int.TryParse(Console.ReadLine(), out Pocetsloupcu))
+            {
+                Console.WriteLine("Zadaná volba neodpovádí formátu.");
+                Console.Write("Zadej počet sloupců: ");
+            }
+
+            string[,] Pole = new string[Pocetradek, Pocetsloupcu];
             bool Game = true;
 
             Random random = new Random();
-            for (int x = 0; x < 5; x++)
+            for (int x = 0; x < Pocetradek; x++)
             {
-                for (int y = 0; y < 5; y++)
+                for (int y = 0; y < Pocetsloupcu; y++)
                 {
                     int help = random.Next(0, 2);
                     if (help == 0)
@@ -26,14 +42,13 @@ namespace Praxe
                     }
                 }
             }
-            int som = 0;
 
             while (Game)
             {
                 int idk = 1;
-                for (int i = 0; i < 5; i++)
+                for (int i = 0; i < Pocetradek; i++)
                 {
-                    for (int j = 0; j < 5; j++)
+                    for (int j = 0; j < Pocetsloupcu; j++)
                     {
                         if (Pole[i, j] == "X")
                         {
@@ -51,9 +66,9 @@ namespace Praxe
                     Game = false;
                 }
 
-                for (int x = 0; x < 5; x++)
+                for (int x = 0; x < Pocetradek; x++)
                 {
-                    for (int y = 0; y < 5; y++)
+                    for (int y = 0; y < Pocetsloupcu; y++)
                     {
                         Console.Write(Pole[x, y] + " ");
                     }
@@ -64,15 +79,15 @@ namespace Praxe
 
                 Console.Write("Zadej řádek bodu který chceš změnit: ");
                 int radek;
-                while (!int.TryParse(Console.ReadLine(), out radek) || radek < 1 || radek > 5)
+                while (!int.TryParse(Console.ReadLine(), out radek) || radek < 1 || radek > Pocetradek)
                 {
                     Console.WriteLine("Zadaná volba je příliš velká nebo malá.");
-                    Console.Write($"Zadej výběr (): ");
+                    Console.Write("Zadej řádek bodu který chceš změnit: ");
                 }
 
                 int sloupec;
                 Console.Write("Zadej sloupec bodu který chceš změnit: ");
-                while (!int.TryParse(Console.ReadLine(), out sloupec) || sloupec < 1 || sloupec > 5)
+                while (!int.TryParse(Console.ReadLine(), out sloupec) || sloupec < 1 || sloupec > Pocetsloupcu)
                 {
                     Console.WriteLine("Zadaná volba je příliš velká nebo malá.");
                     Console.Write($"Zadej výběr (): ");
