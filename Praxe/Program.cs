@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Diagnostics.Contracts;
 using System.Reflection.Metadata;
 
 namespace Praxe
@@ -45,6 +46,16 @@ namespace Praxe
 
             while (Game)
             {
+                for (int x = 0; x < Pocetradek; x++)
+                {
+                    for (int y = 0; y < Pocetsloupcu; y++)
+                    {
+                        Console.Write(Pole[x, y] + " ");
+                    }
+                    Console.WriteLine();
+                }
+                Console.ReadKey(true);
+
                 int idk = 1;
                 for (int i = 0; i < Pocetradek; i++)
                 {
@@ -57,24 +68,15 @@ namespace Praxe
                         else
                         {
                             idk = 1;
-                            break;
+                            goto fail;
                         }
                     }
                 }
+                fail:
                 if (idk == 0)
                 {
                     Game = false;
                 }
-
-                for (int x = 0; x < Pocetradek; x++)
-                {
-                    for (int y = 0; y < Pocetsloupcu; y++)
-                    {
-                        Console.Write(Pole[x, y] + " ");
-                    }
-                    Console.WriteLine();
-                }
-                Console.ReadKey(true);
 
 
                 Console.Write("Zadej řádek bodu který chceš změnit: ");
