@@ -10,17 +10,47 @@ namespace Praxe
             string[,] Pole = new string[5, 5];
             bool Game = true;
 
+            Random random = new Random();
             for (int x = 0; x < 5; x++)
             {
                 for (int y = 0; y < 5; y++)
                 {
-                    Pole[x, y] = "O";
+                    int help = random.Next(0, 2);
+                    if (help == 0)
+                    {
+                        Pole[x, y] = "O";
+                    }
+                    else
+                    {
+                        Pole[x, y] = "X";
+                    }
                 }
             }
             int som = 0;
 
             while (Game)
             {
+                int idk = 1;
+                for (int i = 0; i < 5; i++)
+                {
+                    for (int j = 0; j < 5; j++)
+                    {
+                        if (Pole[i, j] == "X")
+                        {
+                            idk = 0;
+                        }
+                        else
+                        {
+                            idk = 1;
+                            break;
+                        }
+                    }
+                }
+                if (idk == 0)
+                {
+                    Game = false;
+                }
+
                 for (int x = 0; x < 5; x++)
                 {
                     for (int y = 0; y < 5; y++)
@@ -125,26 +155,6 @@ namespace Praxe
                     }
                 }
 
-                int idk = 1;
-                for (int i = 0; i < 5; i++)
-                {
-                    for (int j = 0; j < 5; j++)
-                    {
-                        if (Pole[i, j] == "X")
-                        {
-                            idk = 0;
-                        }
-                        else 
-                        {
-                            idk = 1;
-                            break;
-                        }
-                    }
-                }
-                if (idk == 0)
-                {
-                    Game = false;
-                }
                 Console.Clear();
             }
         }
