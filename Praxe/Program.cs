@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Reflection.Metadata;
 
 namespace Praxe
 {
@@ -124,17 +125,25 @@ namespace Praxe
                     }
                 }
 
-
-                for (int i = 0; i < 4; i++)
+                int idk = 1;
+                for (int i = 0; i < 5; i++)
                 {
-                    for (int j = 0; j < 4; j++)
+                    for (int j = 0; j < 5; j++)
                     {
                         if (Pole[i, j] == "X")
                         {
-                            Game = false;
+                            idk = 0;
                         }
-                        else { break; }
+                        else 
+                        {
+                            idk = 1;
+                            break;
+                        }
                     }
+                }
+                if (idk == 0)
+                {
+                    Game = false;
                 }
                 Console.Clear();
             }
