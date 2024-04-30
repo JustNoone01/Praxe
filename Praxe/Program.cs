@@ -54,7 +54,6 @@ namespace Praxe
                     }
                     Console.WriteLine();
                 }
-                Console.ReadKey(true);
 
                 int idk = 1;
                 for (int i = 0; i < Pocetradek; i++)
