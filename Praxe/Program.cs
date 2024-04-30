@@ -28,18 +28,94 @@ namespace Praxe
             bool Game = true;
 
             Random random = new Random();
+
             for (int x = 0; x < Pocetradek; x++)
             {
                 for (int y = 0; y < Pocetsloupcu; y++)
                 {
-                    int help = random.Next(0, 2);
-                    if (help == 0)
+                    Pole[x, y] = "O";
+                }
+            }
+
+            for (int i  = 0; i < Pole.Length; i++)
+            {
+                for (int j = 0; j < Pole.Length; j++)
+                {
+                    int radnx = random.Next(0, Pocetradek);
+                    int randy = random.Next(0, Pocetsloupcu);
+
+                    if (Pole[radnx, randy] == "X")
                     {
-                        Pole[x, y] = "O";
+                        Pole[radnx, randy] = "O";
                     }
                     else
                     {
-                        Pole[x, y] = "X";
+                        Pole[radnx, randy] = "X";
+                    }
+
+                    if (radnx + 1 > Pocetradek - 1)
+                    {
+
+                    } // Dole
+                    else
+                    {
+                        if (Pole[    + 1, randy] == "X")
+                        {
+                            Pole[radnx + 1, randy] = "O";
+                        }
+                        else
+                        {
+                            Pole[radnx + 1, randy] = "X";
+                        }
+                    }
+
+                    if (radnx - 1 < 0)
+                    {
+
+                    } // Nahoře
+                    else
+                    {
+                        if (Pole[radnx - 1, randy] == "X")
+                        {
+                            Pole[radnx - 1, randy] = "O";
+                        }
+                        else
+                        {
+                            Pole[radnx - 1, randy] = "X";
+                        }
+
+                    }
+
+                    if (randy + 1 > Pocetsloupcu - 1)
+                    {
+
+                    } // Vpravo
+                    else
+                    {
+                        if (Pole[radnx, randy + 1] == "X")
+                        {
+                            Pole[radnx, randy + 1] = "O";
+
+                        }
+                        else
+                        {
+                            Pole[radnx, randy + 1] = "X";
+                        }
+                    }
+
+                    if (randy - 1 < 0)
+                    {
+                    } // Vlevo
+                    else
+                    {
+                        if (Pole[radnx, randy - 1] == "X")
+                        {
+                            Pole[radnx, randy - 1] = "O";
+                        }
+                        else
+                        {
+                            Pole[radnx, randy - 1] = "X";
+                        }
                     }
                 }
             }
