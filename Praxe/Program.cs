@@ -36,7 +36,7 @@ namespace Praxe
                     Pole[x, y] = "O";
                 }
             }
-
+            
             for (int i  = 0; i < Pole.Length; i++)
             {
                 for (int j = 0; j < Pole.Length; j++)
@@ -137,6 +137,21 @@ namespace Praxe
                     for (int j = 0; j < Pocetsloupcu; j++)
                     {
                         if (Pole[i, j] == "X")
+                        {
+                            idk = 0;
+                        }
+                        else
+                        {
+                            idk = 1;
+                            goto fail;
+                        }
+                    }
+                }
+                for (int i = 0; i < Pocetradek; i++)
+                {
+                    for (int j = 0; j < Pocetsloupcu; j++)
+                    {
+                        if (Pole[i, j] == "O")
                         {
                             idk = 0;
                         }
